@@ -1,0 +1,283 @@
+﻿@page "{id?}"
+@model WebAppPruebaTecnica.Pages.CardDetailsModel
+@{
+    ViewData["Title"] = "Card Details";
+}
+
+
+<div class="card-details">
+    <h1>Estado de Cuenta</h1>
+
+    <div class="detail-row">
+        <label>Numero de tarjeta:</label>
+        <span class="value" hidden>@Model.CardDetail.id_Tarjeta</span>
+        <span class="value">@Model.CardDetail.numeroTarjeta</span>
+    </div>
+
+    <div class="detail-row">
+        <label>Saldo disponible:</label>
+        <span class="value">@Model.CardDetail.saldoDisponible.ToString("0.00")</span>
+    </div>
+
+    <div class="detail-row">
+        <label>Limite de credito:</label>
+        <span class="value">@Model.CardDetail.limiteCredito.ToString("0.00")</span>
+    </div>
+
+    <div class="detail-row">
+        <label>Saldo Actual:</label>
+        <span class="value">@Model.CardDetail.saldoActual.ToString("0.00")</span>
+    </div>
+
+</div>
+
+
+<br />
+
+
+
+<div class="card-details">
+    <h1>Gastos de Mes Anterior y Actual</h1>
+
+    <div class="detail-row">
+        <label>Gastos del ultimo mes:</label>
+        <span class="value">@Model.CardMonthlyPurchases.totalMesActual.ToString("0.00")</span>
+    </div>
+
+    <div class="detail-row">
+        <label>Gastos de este mes:</label>
+        <span class="value">@Model.CardMonthlyPurchases.totalMesAnterior.ToString("0.00")</span>
+    </div>
+
+</div>
+
+<br />
+
+<div class="card-details">
+    <h1>Historial de Compras del Mes</h1>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Monto de la Compra</th>
+                <th scope="col">Descripcion de la Compra</th>
+                <th scope="col">Fecha de la Compra</th>
+                
+            </tr>
+        </thead>
+        
+        @if (Model.CardPurchases != null && Model.CardPurchases.Count > 0)
+        {
+        <tbody>
+            @foreach (var purchases in Model.CardPurchases)
+            {
+
+                <tr>
+                    <th>@purchases.montoCompra</th>
+                    <th>@purchases.descripcionCompra</th>
+                    <th>@purchases.fechaCompra</th>
+                </tr>
+            }
+            </tbody>
+        }
+        else
+        {
+            
+        }
+    </table>
+    
+</div>
+
+<button class="btn btn-success mt-3" data-bs-toggle="modal" data-bs-target="#modalPago">Pagar tarjeta</button>
+<button class="btn btn btn-outline-success mt-3" data-bs-toggle="modal" data-bs-target="#modalCompra">Realizar Compra</button>
+<button class="btn btn-outline-dark mt-3" data-bs-toggle="modal" data-bs-target="#modalTransacciones">Transacciones</button>
+
+
+
+
+<!-- Modal para efectuar pagos-->
+<div class="modal fade" id="modalPago" tabindex="-1" aria-labelledby="modalPagoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modalPago">Efectua tu Pago</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" asp-page-handler="ProcessPayment">
+                    <input type="hidden" id="idTarjeta" name="idTarjeta" value="@Model.CardDetail.id_Tarjeta" />
+
+                    <div class="form-floating mb-3">
+                        <input type="number" class="form-control" id="montoPagar" name="montoPagar" placeholder="Monto a Pagar" autocomplete="off" required/>
+                        <label for="montoPagar" class="form-label">Monto a Pagar</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="date" class="form-control" id="fechaPago" name="fechaPago" placeholder="Fecha de Pago" autocomplete="off" required/>
+                        <label for="fechaPago" class="form-label">Escoje la Fecha</label>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary">Pagar</button>
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal para efectuar compras-->
+<div class="modal fade" id="modalCompra" tabindex="-1" aria-labelledby="modalCompraLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modalCompra">Efectua tu Pago</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" asp-page-handler="ProcessPurchase">
+                    <input type="hidden" id="idTarjeta" name="idTarjeta" value="@Model.CardDetail.id_Tarjeta" />
+
+                    <div class="form-floating mb-3">
+                        <input type="number" class="form-control" id="montoComprar" name="montoComprar" placeholder="Monto a Pagar de Compra" autocomplete="off" required/>
+                        <label for="montoComprar" class="form-label">Monto a Pagar de Compra</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="date" class="form-control" id="fechaCompra" name="fechaCompra" placeholder="Fecha de Compra" autocomplete="off" required/>
+                        <label for="fechaCompra" class="form-label">Escoje la Fecha</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="descripcionCompra" name="descripcionCompra" placeholder="Escribe una Breve Descripcion" autocomplete="off" required />
+                        <label for="descripcionCompra" class="form-label">Escribe una Breve Descripcion</label>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary">Efectuar Compra</button>
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Modal para historial de la tarjeta-->
+
+<div class="modal fade" id="modalTransacciones" tabindex="-1" aria-labelledby="modalTransaccionesLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTransaccionesLabel">Transacciones</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="card-details">
+                    <table class="table" id="transactionHistoryTable">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Monto</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Tipo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.CardPurchases != null && Model.CardPurchases.Count > 0)
+                            {
+                                @foreach (var purchase in Model.Transactions)
+                                {
+                                    <tr>
+                                        <td>@purchase.id</td>
+                                        <td>@purchase.monto</td>
+                                        <td>@purchase.fecha</td>
+                                        <td>@purchase.tipo</td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="4" class="text-center">No transactions found.</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+   
+    .card-details {
+        background-color: white;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .card-details h1 {
+        color: #333;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 10px;
+    }
+    .detail-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+    }
+    .detail-row label {
+        font-weight: bold;
+        color: #666;
+    }
+    .detail-row .value {
+        color: #333;
+    }
+</style>
+
+@{
+    var successMessage = TempData["SuccessMessage"] as string;
+    var errorMessage = TempData["ErrorMessage"] as string;
+}
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var successMessage = '@successMessage';
+            var errorMessage = '@errorMessage';
+
+            if (successMessage) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success',
+                    text: successMessage,
+                    confirmButtonText: 'OK'
+                });
+            }
+
+            if (errorMessage) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: errorMessage,
+                    confirmButtonText: 'Try Again'
+                });
+            }
+        });
+    </script>
+}

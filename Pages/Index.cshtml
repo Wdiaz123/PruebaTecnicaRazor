@@ -1,0 +1,99 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenido @Model.FullName</h1>
+   
+</div>
+
+
+<h3>Tus tarjetas</h3>
+
+@if (Model.Cards != null && Model.Cards.Count > 0)
+{
+   <div class="row pt-5">
+       
+            @foreach (var card in Model.Cards)
+            {
+            
+               <div class="col">
+                    <div class="card" onclick="navigateToCardDetails('@card.id_Tarjeta')">
+                        <div class="visa_logo">
+                            <img src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/visa.png" alt="Visa Logo">
+                        </div>
+                        <div class="visa_info">
+                            <img src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/chip.png" alt="Chip">
+                            <p>@card.numeroTarjeta</p>
+                        </div>
+                        <div class="visa_crinfo">
+                            <p>02/12</p>
+                            <p>@Model.ShortName</p>
+                        </div>
+                    </div>
+               
+                </div>
+              
+            
+
+            }
+    </div>
+}
+else
+{
+    <p>No cards available.</p>
+}
+
+
+
+<script>
+    function navigateToCardDetails(cardId) {
+        window.location.href = `/CardDetails?id=${cardId}`;
+    }
+</script>
+
+<style>
+    .card {
+        cursor: pointer; 
+        transition: transform 0.2s; 
+    }
+
+        .card:hover {
+            transform: scale(1.05); 
+        }
+</style>
+
+
+@{
+    var successMessage = TempData["SuccessMessage"] as string;
+    var errorMessage = TempData["ErrorMessage"] as string;
+}
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var successMessage = '@successMessage';
+            var errorMessage = '@errorMessage';
+
+            if (successMessage) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success',
+                    text: successMessage,
+                    confirmButtonText: 'OK'
+                });
+            }
+
+            if (errorMessage) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: errorMessage,
+                    confirmButtonText: 'Try Again'
+                });
+            }
+        });
+    </script>
+}

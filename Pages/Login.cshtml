@@ -1,0 +1,35 @@
+﻿@page "/Login"
+@model WebAppPruebaTecnica.Pages.LoginModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Pages/Shared/_Login.cshtml";
+}
+
+
+<div class="loginContainer">
+    <div class="loginForm">
+        <div class="text-center">
+            
+        </div>
+        <form method="post">
+            <input class="input"
+                   type="text"
+                   placeholder="Correo"
+                   asp-for="Username"
+                   required />
+            <input class="input"
+                   type="password"
+                   placeholder="Contraseña"
+                   asp-for="Password"
+                   required />
+            
+            <button class="button-CBK btn btn-primary" type="submit">Ingresar</button>
+        </form>
+    </div>
+</div>
+
+
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+    <p>@Model.Message</p>
+}
