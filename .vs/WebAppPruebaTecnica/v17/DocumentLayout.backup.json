@@ -144,7 +144,7 @@
               "RelativeDocumentMoniker": "Pages\\CardDetails.cshtml",
               "ToolTip": "C:\\Users\\PC\\source\\repos\\WebAppPruebaTecnica\\Pages\\CardDetails.cshtml",
               "RelativeToolTip": "Pages\\CardDetails.cshtml",
-              "ViewState": "AgIAAKUAAAAAAAAAAAAAAOMAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAKUAAAAAAAAAAAAAAMwAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-01-23T22:58:55.163Z",
               "EditorCaption": ""
@@ -159,8 +159,7 @@
               "RelativeToolTip": "Pages\\CardDetails.cshtml.cs",
               "ViewState": "AgIAAOoAAAAAAAAAAAAQwA8BAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T22:59:20.619Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-23T22:59:20.619Z"
             },
             {
               "$type": "Document",
@@ -172,8 +171,7 @@
               "RelativeToolTip": "..\\APIWebPrueba\\Models\\Payment.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-24T02:16:30.919Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-24T02:16:30.919Z"
             },
             {
               "$type": "Document",
@@ -185,8 +183,7 @@
               "RelativeToolTip": "..\\APIWebPrueba\\Validator\\PaymentDTOValidator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-24T02:23:31.72Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-24T02:23:31.72Z"
             },
             {
               "$type": "Document",
@@ -198,8 +195,7 @@
               "RelativeToolTip": "Models\\CardPurchases.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T23:38:39.018Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-23T23:38:39.018Z"
             },
             {
               "$type": "Document",
@@ -211,8 +207,7 @@
               "RelativeToolTip": "..\\APIWebPrueba\\Controllers\\ClientsController.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAxwBwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T15:59:14.862Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-23T15:59:14.862Z"
             },
             {
               "$type": "Document",
@@ -224,8 +219,7 @@
               "RelativeToolTip": "Pages\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-23T15:56:32.713Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-23T15:56:32.713Z"
             },
             {
               "$type": "Document",
@@ -237,8 +231,7 @@
               "RelativeToolTip": "Pages\\Login.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-23T15:54:44.351Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-23T15:54:44.351Z"
             },
             {
               "$type": "Document",
@@ -250,8 +243,7 @@
               "RelativeToolTip": "Pages\\Logout.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-23T16:57:45.953Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-23T16:57:45.953Z"
             },
             {
               "$type": "Document",
@@ -263,8 +255,7 @@
               "RelativeToolTip": "..\\APIWebPrueba\\Controllers\\PaymentController.cs",
               "ViewState": "AgIAACIAAAAAAAAAAAAowE0AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-24T01:50:57.041Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-24T01:50:57.041Z"
             },
             {
               "$type": "Document",
@@ -276,8 +267,7 @@
               "RelativeToolTip": "..\\APIWebPrueba\\DatabaseContext.cs",
               "ViewState": "AgIAAL4AAAAAAAAAAAAUwNYAAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-21T17:47:44.311Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-21T17:47:44.311Z"
             },
             {
               "$type": "Document",
@@ -289,8 +279,7 @@
               "RelativeToolTip": "..\\APIWebPrueba\\DTOs\\PaymentDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-24T02:14:31.41Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-24T02:14:31.41Z"
             },
             {
               "$type": "Document",
@@ -302,8 +291,7 @@
               "RelativeToolTip": "..\\APIWebPrueba\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-21T17:47:29.829Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-21T17:47:29.829Z"
             },
             {
               "$type": "Document",
@@ -339,8 +327,7 @@
               "RelativeToolTip": "Pages\\Index.cshtml",
               "ViewState": "AgIAADQAAAAAAAAAAAAAwFsAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-23T16:38:58.607Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-23T16:38:58.607Z"
             },
             {
               "$type": "Document",

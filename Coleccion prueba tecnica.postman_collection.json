@@ -1,0 +1,257 @@
+{
+	"info": {
+		"_postman_id": "cc92cefa-9959-4056-b6b2-e6ed24b1094f",
+		"name": "Coleccion prueba tecnica",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27498812"
+	},
+	"item": [
+		{
+			"name": "verify login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7289/api/Clients/verify-login?username=wdiaz123&password=1234aaxd",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7289",
+					"path": [
+						"api",
+						"Clients",
+						"verify-login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "wdiaz123"
+						},
+						{
+							"key": "password",
+							"value": "1234aaxd"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cards per client",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7289/api/Clients/cards-per-client?Id_Cliente=1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7289",
+					"path": [
+						"api",
+						"Clients",
+						"cards-per-client"
+					],
+					"query": [
+						{
+							"key": "Id_Cliente",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "details per card",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7289/api/Clients/details-per-card?Id_Tarjeta=1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7289",
+					"path": [
+						"api",
+						"Clients",
+						"details-per-card"
+					],
+					"query": [
+						{
+							"key": "Id_Tarjeta",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "purchases per card",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7289/api/Clients/purchases-per-card?Id_Tarjeta=1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7289",
+					"path": [
+						"api",
+						"Clients",
+						"purchases-per-card"
+					],
+					"query": [
+						{
+							"key": "Id_Tarjeta",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "monthly purchases per card",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7289/api/Clients/monthly-purchases-per-card?Id_Tarjeta=1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7289",
+					"path": [
+						"api",
+						"Clients",
+						"monthly-purchases-per-card"
+					],
+					"query": [
+						{
+							"key": "Id_Tarjeta",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "card process payment",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id_Tarjeta\": 1,\r\n  \"montoPago\": 10,\r\n  \"fechaPago\": \"2025-01-28T00:42:04.041Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7289/api/Payment/card-process-payment",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7289",
+					"path": [
+						"api",
+						"Payment",
+						"card-process-payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "card purchase payment",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id_Tarjeta\": 1,\r\n  \"montoCompra\": 10,\r\n  \"fechaCompra\": \"2025-01-28T00:43:09.492Z\",\r\n  \"descripcionCompra\": \"Postman test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7289/api/Payment/card-process-purchase-payment",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7289",
+					"path": [
+						"api",
+						"Payment",
+						"card-process-purchase-payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "card transaction history",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7289/api/Payment/card-transaction-history?Id_Tarjeta=1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7289",
+					"path": [
+						"api",
+						"Payment",
+						"card-transaction-history"
+					],
+					"query": [
+						{
+							"key": "Id_Tarjeta",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
